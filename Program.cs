@@ -12,5 +12,8 @@ foreach (var jobject in json["results"]!)
     sb.AppendLine();
 }
 
-var result = Regex.Replace(sb.ToString(), "yy+", string.Empty);
+var result = sb.ToString();
+
+result = Regex.Replace(result, "yy+", string.Empty);
+
 File.WriteAllText("wynik.txt", result);
